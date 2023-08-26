@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        
+        body{
+            background-color: #FEFAE0;
+        }
+        
+        .container{
+            width: 30%;
+            margin-left: 35%;
+            margin-top: 5%;
+            border-radius: 20px;
+            background: rgb(221,161,94);
+            background: linear-gradient(90deg, rgba(221,161,94,1) 0%, rgba(188,108,37,1) 100%);
+            overflow-x: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .one span{
+            text-align: left;
+        }
+        
+        
+        .big pre{
+            width: 100%;
+            font-size: x-large;
+            padding: 30px;
+            background-color:#DDA15E;
+            /* background-color:#FEFAE0; */
+            text-align: center ;
+            border-radius: 15px;
+            color: #283618;
+        }
+        
+        .container .names{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container .names span{
+            height: 25px;
+            margin: 5px;
+            font-size: larger;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container .input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+        
+        }
+        
+        .container .input input{
+            height: 25px;
+            width: 200px;
+            margin: 6px;
+            background-color: #FEFAE0;
+            border-radius: 10px;
+        }
+        
+        
+        {% comment %} .big #button button{
+            margin-top: 40px;
+            margin-left: 42%;
+            width: 200px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: xx-large;
+            border-radius: 15px;
+            background-color: #283618;
+            color: white; {% endcomment %}
+
+        .text-center{
+            margin-left: 25%;
+            width: 50%;
+            margin-top: 50px;
+            border-radius: 20px;
+            background-color: #FEFAE0
+        }
+        
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <form method="post" action="/">
+        {% csrf_token %}
+        <div class="big">
+            <pre><h1><b> Housing_AI </b></h1></pre>
+        </div>
+        <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>The predicted value for the house is <b>{{ longitude }}</b>.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Data Source <cite title="Source Title">kaggle.com</cite>
+            </figcaption>
+        </figure>
+        <div class='text-center py-4' id="button">
+            <button class="btn btn-warning" type="Submit">Go To Home</button>
+        </div>
+    </form>
+</body>
+</html>
